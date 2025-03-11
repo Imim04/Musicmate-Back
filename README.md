@@ -1,105 +1,54 @@
-# Get start with POSWeb Backend
-As you've clone this project, don't forget to run this command in this project
-## npm i
-![npm_i](https://github.com/user-attachments/assets/711ca280-4678-46b0-a3e3-7d56bacfb06e)
+# Backend
 
-## Make sure your database is running !!
+เลือกประเภทฐานข้อมูลที่เหมาะสม ออกแบบโครงสร้างตาราง และเขียนโปรแกรมเพื่อจัดเก็บ ดึงมาใช้ หรือแก้ไขข้อมูลได้
 
-# Now you should ready to run this project now!
+### โดยที่เราทำ Backend ของ MusicMate จะมีดังนี้
 
-## First of all, you have to make sure to check this config file
-You should to config it to match to your Database
+1.Server
 
-![CheckOnConfig](https://github.com/user-attachments/assets/b6d435e6-757e-40c0-a94c-d99df3a7de40)
+![1](https://github.com/user-attachments/assets/00b9bc94-88ee-438e-abf3-277c21ca4121)
 
-# Let's see each part of this code, what it's doing ?
-First, server.js, it's endpoint of this project.
-And it's the main part to start the server by this command.
-## node server.js or npm start
+ทำการรับข้อมูล JSON และแสดงข้อความ DB Connected! ถ้าสามารถเชื่อมต่อกับ Data base ได้แล้ว และแสดงข้อความ Server is running ที่ port ไหน
 
-![Start Server](https://github.com/user-attachments/assets/05460eec-431c-429f-8d8f-0b5a3b2ae17a)
+2.Config
 
-## This project has 4 main part to run, in app folder
-### -config
-### -controllers
-### -models
-### -routes
+![2](https://github.com/user-attachments/assets/66ae0fd7-5e04-417a-a354-8ca79939f0ab)
 
-![Backend File](https://github.com/user-attachments/assets/869ba12f-a925-43e5-b569-c5e60c8524f7)
+เป็นการตั้งค่าการเชื่อมต่อ  เช่น Data base ชื่อ MusicMate
 
-# config
-This file contains every config you need to run this project.
-For now, it contains Database configuration
+password คือ 1234   dialect คือ postgres
 
-![database configuration](https://github.com/user-attachments/assets/6b8ab26e-d2e5-4303-8f56-bcb3fd14572d)
+3.Controllers
 
-# controllers
-This file contains every action of APIs to do CRUD.
-Create
-Read
-Update
-Delete
+![3 1](https://github.com/user-attachments/assets/97de3459-9ffb-4cf3-9420-edd4a3775ea2)
 
-## This function have for Read
+![3,2](https://github.com/user-attachments/assets/121a469e-aa54-40a5-85b2-ed80dae651a8)
 
-![FindAll](https://github.com/user-attachments/assets/27e46683-e0fb-4be5-9f51-17798183c6b3)
+![3 3](https://github.com/user-attachments/assets/5fe7b2fc-6fdf-4b18-ac27-4d9b02602233)
 
-## This function have for Create
+กำหนดการทำงาน ว่า Creat หรือ Edit หรือ Delect หรือ การสั่งงานที่ทุกอย่างผ่าน id
 
-![Create](https://github.com/user-attachments/assets/71e72174-c6b6-4c46-9791-1e32bd069261)
+4.Models
 
-## This function have for Read, but specific with id
+4.1 Index
 
-![FindByID](https://github.com/user-attachments/assets/86390f32-9919-4d90-8192-83253f156990)
+![4 1](https://github.com/user-attachments/assets/376ac7a4-ced2-4e7a-af89-d036ac82dd9d)
 
-## This funtion have for Update by id
+เชื่อมต่อกับฐานข้อมูล
 
-![Update_Backend](https://github.com/user-attachments/assets/0e0f2c1e-d93b-4ea7-a50b-deb2a886d231)
+4.2 MusicMate.model
 
-## This function have for Delete by id
+![4 2](https://github.com/user-attachments/assets/bbe8e647-ee46-4358-9395-25dea8307cb4)
 
-![DeleteByID](https://github.com/user-attachments/assets/e65f8119-c1b7-45cf-a91f-5a72eead8c40)
+สร้างตาราง หรือ กำหนดฟิว
 
-# models
-This file contains model of the table we'll create and plug to database
+5.Routs
 
-## index.js
-it contains sequelize and use config to plug with database.
-And then export to use in other file
+![5](https://github.com/user-attachments/assets/f320f17e-efa6-4e5e-9328-c64d25cd4f04)
 
-![indexOfModel](https://github.com/user-attachments/assets/6255078a-bfbd-400e-a6af-ed74b77bf4ec)
+กำหนดเส้นทาง
 
-## product.model
-it contains model to create table in database and match to table.
-
-![ModelOfTable](https://github.com/user-attachments/assets/e432cf2c-461a-480a-b1e6-159aac219348)
-
-# routes
-This file contains routes of APIs to lead every requests to controllers.
-
-## user.routes
-it contains every routes to go to controllers.
-
-![routes](https://github.com/user-attachments/assets/11c6469b-6308-47c9-9c9d-a83b55b452b7)
-
-# server.js
-This file is an endpoint for every requests to go to other routes.
-
-It has allowed cors for Frontend project to pass through.
-
-Use sequelize from model to connect to database.
-
-And the last, it will listen to any request that come in on port 5000 which contained by .env config file
-
-![server js](https://github.com/user-attachments/assets/e72bd988-2958-4886-b7ad-6afa0496fb6a)
-
-
-
-
-
-
-
-
+## \* ที่สำคัญห้ามลืมควรจะ npm i ก่อน และตรวจสอบให้แน่ใจว่า docker ทำการรันอยู่ \*
 
 
 
